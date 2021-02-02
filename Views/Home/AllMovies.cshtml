@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "All Movies";
+}
+
+@model IEnumerable<MovieCollection.Models.NewMovie>
+
+<div class="text-center">
+    <div class="container-fluid">
+        <h1>@ViewData["Title"]</h1>
+        <h2>Here is the list of movies</h2>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Category</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Director</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Edited</th>
+                    <th scope="col">Lent To</th>
+                    <th scope="col">Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (MovieCollection.Models.NewMovie r in Model)
+                {
+                    <tr>
+                        <td>@r.Category</td>
+                        <td>@r.Title</td>
+                        <td>@r.Year</td>
+                        <td>@r.Director</td>
+                        <td>@r.Rating</td>
+                        <td>@r.Edited</td>
+                        <td>@r.LentTo</td>
+                        <td>@r.Notes</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <br />
+        <h3><a asp-controller="home" asp-action="NewMovie">Click here</a> to add another movie</h3>
+    </div>
+</div>
