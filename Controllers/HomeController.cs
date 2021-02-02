@@ -31,7 +31,7 @@ namespace MovieCollection.Controllers
 
         public IActionResult AllMovies()
         {
-            return View(Repository.Responses.Where(r => r.Title.ToLower() != "independance day"));
+            return View(Repository.Responses.Where(r => r.Title != "Independence Day"));
         }
 
         [HttpGet]
