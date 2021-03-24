@@ -10,6 +10,9 @@ namespace MovieCollection.Models
 {
     public class NewMovie
     {
+        [Key]
+        public int MovieID { get; set; }
+
         [Required]
         public String Category { get; set; }
 
@@ -29,7 +32,7 @@ namespace MovieCollection.Models
 
         public String LentTo { get; set; }
 
-        [StringLength(25, ErrorMessage = "The Notes value cannot exceed 25 characters. ")]
+        [StringLength(25, ErrorMessage = "The Notes value cannot exceed 25 characters.")]
         public String Notes { get; set; }
     }
 
